@@ -10,6 +10,8 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerMovement movement;
 
+    public AudioSource dieSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class PlayerLife : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         movement.enabled = false;
+        dieSound.Play();
         anim.SetTrigger("death");
     }
 

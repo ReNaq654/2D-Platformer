@@ -9,6 +9,8 @@ public class ItemCollector : MonoBehaviour
 
     public  TMP_Text coinsText;
 
+    public AudioSource coinSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))
@@ -16,6 +18,7 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             coins++;
             coinsText.text = "Coins: " + coins;
+            coinSound.Play();
         }
     }
 }
